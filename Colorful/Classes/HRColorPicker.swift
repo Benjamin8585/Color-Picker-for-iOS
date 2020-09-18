@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ColorPicker: UIControl {
+public class HRColorPicker: UIControl {
     
     private(set) lazy var colorSpace: HRColorSpace = { preconditionFailure() }()
 
@@ -138,7 +138,7 @@ public class ColorPicker: UIControl {
     }
 }
 
-extension ColorPicker: UIGestureRecognizerDelegate {
+extension HRColorPicker: UIGestureRecognizerDelegate {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer.view == colorMap, otherGestureRecognizer.view == colorMap {
             return true
@@ -147,7 +147,7 @@ extension ColorPicker: UIGestureRecognizerDelegate {
     }
 }
 
-extension ColorPicker: BrightnessSliderDelegate {
+extension HRColorPicker: BrightnessSliderDelegate {
     func handleBrightnessChanged(slider: BrightnessSlider) {
         hsvColor = hsvColor.hueAndSaturation.with(brightness: slider.brightness)
         mapColorToView()

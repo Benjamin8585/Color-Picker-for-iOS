@@ -11,7 +11,7 @@ import Colorful
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var colorPicker: ColorPicker!
+    @IBOutlet weak var colorPicker: HRColorPicker!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var uiSwitch: UISwitch!
     @IBOutlet weak var colorSpaceLabel: UILabel!
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         handleColorChanged(picker: colorPicker)
     }
 
-    @objc func handleColorChanged(picker: ColorPicker) {
+    @objc func handleColorChanged(picker: HRColorPicker) {
         label.text = picker.color.description
     }
 
